@@ -11,7 +11,7 @@
                 <div class="d-flex flex-row justify-content-between">
                     <a href="/blogs/<%= blog._id %>" class="btn btn-outline-primary">More <span><i
                                 class="fas fa-angle-right"></i></span></a>
-                    <p> <%= moment(blogs.created).fromNow() %> </p>
+                    <p> <%= moment(blog.created).fromNow()%></p>
                 </div>
                 <p><em>by <%= blog.author.name %></em></p>
             </div>
