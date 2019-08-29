@@ -1,0 +1,23 @@
+<%include ../partials/header %>
+
+<div class="container">
+    <% blogs.forEach((blog) => { %>
+    <div class="d-flex flex-column align-items-center">
+        <div class="card my-3">
+            <img class="card-img-top" src="<%= blog.image %> ">
+            <div class="card-body">
+                <h1 class="card-title"><%= blog.title %></h1>
+                <p class="card-text"> <%= blog.body.substring(0, 80)%>... </p>
+                <div class="d-flex flex-row justify-content-between">
+                    <a href="/blogs/<%= blog._id %>" class="btn btn-outline-primary">More <span><i
+                                class="fas fa-angle-right"></i></span></a>
+                    <p> <%= moment(blogs.created).fromNow() %> </p>
+                </div>
+                <p><em>by <%= blog.author.name %></em></p>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+<%include ../partials/footer %>

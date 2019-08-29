@@ -1,0 +1,54 @@
+<%include ../partials/header %>
+
+<div class="container">
+    <div class="d-flex flex-column align-items-center my-3">
+        <div class="card">
+            <img class="card-img-top" src="<%= blogs.image %>">
+            <div class="card-body">
+                <h3 class="card-title"><%= blogs.title %></h3>
+                <p class="card-text"><%= blogs.body %></p>
+                <p class="my-0"><em>Written by <%= blogs.author.name %> </em></p>
+                <div class="d-flex flex-row justify-content-between">
+                    <div>
+                        <% if(currentUser && blogs.author.id.equals(currentUser._id)) { %>
+                        <a href="/blogs/<%=blogs._id%>/edit" class="btn btn-sm btn-outline-info">Edit</a>
+                        <form class="d-inline" action="/blogs/<%= blogs._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                        <% } %>
+                    </div>
+                    <div>
+                        <span><%= moment(blogs.created).fromNow() %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column align-items-center my-3">
+        <div class="card my-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class=""><i class="far fa-comments"></i> Commnets</i></h5>
+                <a href="<%= blogs._id %>/comments/new" class="btn btn-sm btn-primary">Add Comment</a>
+            </div>
+            <% blogs.comment.forEach(comment => { %>
+            <div class="card-body">
+                <h5 class="card-title my-1"><%= comment.author.name %></h5>
+                <p class="card-text"> <%= comment.title %> </p>
+                <div>
+                    <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                    <a href="/blogs/<%=blogs._id%>/comments/<%=comment._id%>/edit"
+                        class="btn btn-sm btn-outline-info">Edit</a>
+                    <form class="d-inline" action="/blogs/<%=blogs._id%>/comments/<%=comment._id%>?_method=DELETE"
+                        method="POST">
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%include ../partials/footer %>

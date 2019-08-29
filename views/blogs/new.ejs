@@ -1,0 +1,29 @@
+<%include ../partials/header %>
+
+<div class="container">
+    <h3 class='text-center mt-3'>CREATE A NEW BLOG</h3>
+    <div class="row mt-3">
+        <div class="col-md-4">
+        </div>
+        <div class='col-md-4'>
+            <form action="/blogs" method="POST">
+                <div class="form-group">
+                    <input type="text" name="title" placeholder="Title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="image" placeholder="Image URL" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="body" placeholder="Body" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+
+<%include ../partials/footer %>
