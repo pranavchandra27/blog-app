@@ -106,8 +106,8 @@ a {
 
 @media screen and (max-width: 768px) {
   #homePage h1 {
-    font-size: 2.2rem;
-    padding-top: 25vh;
+    font-size: 2rem;
+    padding: 25vh 5px 0 5px;
   }
 
   .navi {
@@ -119,9 +119,8 @@ a {
 
   .navi a {
     margin: 0 0.8rem;
-    padding: 0.5rem 1rem;
+    padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.158);
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
