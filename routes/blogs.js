@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
-const passport = require("passport");
 
 //Authentication
 const { ensureAuthenticated, blogOwnership } = require("../config/auth");

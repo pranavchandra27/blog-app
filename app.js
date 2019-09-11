@@ -20,7 +20,7 @@ mongoose
   .connect(db, {
     useNewUrlParser: true
   })
-  .then(() => console.log("MongoDB Connected"))
+  .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
 mongoose.set("useFindAndModify", false);
