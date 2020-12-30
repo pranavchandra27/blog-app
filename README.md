@@ -1,6 +1,7 @@
 # blog-app
-Fully working application made in back-end using node.js, express.js and mongodb also login and signup using passport authentication
+Full stack application with CRUD functionality,
 
-And here is the link to like application
+## stack
+`NodeJs, ExpressJs MongoDB, Passport Auth`
 
 https://enigmatic-tundra-49769.herokuapp.com
